@@ -9,40 +9,40 @@ Given the set of words 'bed', 'bath', 'bedbath', 'and', 'beyond', and the string
 */
 
 let dict = [
-    'quick',
-    'brown',
-    'the',
-    'fox'
-  ]
+  'quick',
+  'brown',
+  'the',
+  'fox'
+]
   
-  let dict2 = [
-    'bed',
-    'bath',
-    'bedbath',
-    'and',
-    'beyond'
-  ]
-  
-  function buildSentence(dictionary, sentence) {
-    let output = []
-    let length = 1
-  
-    for(let i = 0; length < sentence.length && i < sentence.length; length++) {
-      console.log(i, length)
-  
-      let word = sentence.substring( i, i+length )
-  
-      if( dictionary.includes( word ) ) {
-        console.log( word )
-        output.push( word )
-  
-        i += length
-        length = 0
-      }
+let dict2 = [
+  'bed',
+  'bath',
+  'bedbath',
+  'and',
+  'beyond'
+]
+
+function buildSentence( dictionary, sentence ) {
+  let output = []
+  let length = 1
+
+  for(let i = 0; length < sentence.length && i < sentence.length; length++) {
+    console.log(i, length)
+
+    let word = sentence.substring( i, i+length )
+
+    if( dictionary.includes( word ) ) {
+      console.log( word )
+      output.push( word )
+
+      i += length
+      length = 0
     }
-  
-    return (output.length > 0) ? output : null
   }
-  
-  console.log( buildSentence( dict, 'thequickbrownfox' ) )
-  console.log( buildSentence( dict2, 'bedbathandbeyond' ) )
+
+  return (output.length > 0) ? output : null
+}
+
+console.log( buildSentence( dict, 'thequickbrownfox' ) )
+console.log( buildSentence( dict2, 'bedbathandbeyond' ) )
