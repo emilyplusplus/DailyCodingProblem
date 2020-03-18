@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\23-wall-matrix-navigate-min-steps.js"
+            "program": "${workspaceFolder}\\24-binary-tree-locker.js"
         }
     ]
 }
