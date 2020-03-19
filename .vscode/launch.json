@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\24-binary-tree-locker.js"
+            "program": "${workspaceFolder}\\28-justify-text.js"
         }
     ]
 }
