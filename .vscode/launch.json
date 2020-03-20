@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\30-max-water.js"
+            "program": "${workspaceFolder}\\31-min-edits-string.js"
         }
     ]
 }
