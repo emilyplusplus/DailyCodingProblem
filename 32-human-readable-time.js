@@ -11,16 +11,15 @@ The maximum time never exceeds 359999 (99:59:59)
 */
 
 function humanReadable(seconds) {
-    let hours = Math.floor(seconds / 3600)
-    seconds %= 3600
-    let mins = Math.floor(seconds / 60)
-    seconds %= 60
-    return hours.toString().padStart(2, 0) + ':' + mins.toString().padStart(2, 0) + ':' + seconds.toString().padStart(2, 0)
-  }
-  
-  console.log( humanReadable(0) )
-  console.log( humanReadable(5) )
-  console.log( humanReadable(60) )
-  console.log( humanReadable(86399) )
-  console.log( humanReadable(359999) )
-  
+  let hours = Math.floor(seconds / 3600)
+  seconds %= 3600
+  let mins = Math.floor(seconds / 60)
+  seconds %= 60
+  return hours.toString().padStart(2, 0) + ':' + mins.toString().padStart(2, 0) + ':' + seconds.toString().padStart(2, 0)
+}
+
+console.log( humanReadable(0) )
+console.log( humanReadable(5) )
+console.log( humanReadable(60) )
+console.log( humanReadable(86399) )
+console.log( humanReadable(359999) )
