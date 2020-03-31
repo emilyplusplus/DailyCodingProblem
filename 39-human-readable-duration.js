@@ -27,6 +27,23 @@ A component will not appear at all if its value happens to be zero. Hence, 1 min
 A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
 */
 
+function indexToTextInterval(i) {
+  switch(i) {
+    case 0:
+      return 'year'
+    case 1:
+      return 'day'
+    case 2:
+      return 'hour'
+    case 3:
+      return 'minute'
+    case 4:
+      return 'second'
+    default:
+      return ''
+  }
+}
+
 function formatDuration (seconds) {
   if(seconds === 0) return 'now'
   
@@ -37,15 +54,28 @@ function formatDuration (seconds) {
   let y = Math.floor((seconds / 60 / 60 / 24 / 365))
   
   let times = [y,d,h,m,s]
-  times = times.filter(time => {
+  
+  let nonZeroCount = times.filter(time => {
     return time > 0
+  }).length
+  
+  let output = ''
+  let found = 0
+  
+  times.forEach((interval,i) => {
+    if(interval > 0) {
+      found++
+      let hr_name = indexToTextInterval(i)
+      if(interval > 1) hr_name += 's'
+      output += interval + ' ' + hr_name
+      if(found < nonZeroCount - 1) output += ', '
+      else if(found < nonZeroCount) output += ' and '
+    }
   })
-  let cs = times.join(', ')
   
-  console.log(cs)
-  
-  return ''
+  return output
 }
+
 
 console.log(formatDuration(1)) // "1 second"
 console.log(formatDuration(62)) // "1 minute and 2 seconds"
